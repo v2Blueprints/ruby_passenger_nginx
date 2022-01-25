@@ -1,7 +1,9 @@
 {
-	"title": "Rails",
-	"description": "nginx passenger example",
-	"binding_anchor": {
+	"about": {
+		"title": "Rails",
+		"explanation": "nginx passenger example"
+	},
+	"binding_target": {
 		"user": "www",
 		"port": "8889",
 		"servername": "ruby.^^domain_name^^",
@@ -9,7 +11,7 @@
 		"user_home": "/var/www/",
 		"code_destination": "/var/www/^^identifer^^"
 	},
-	"os_packages": {
+	"system_packages": {
 		"adds": [
 			"nginx",
 			"libnginx-mod-http-passenger"
@@ -19,22 +21,28 @@
 		{
 			"type": "embed",
 			"descriptor": {
-				"repository": "https://github.com/v2Blueprints/enginesd_debian_base"
-			},
-      "locale": "^^locale^^",
-      "charset": "^^charset^^"
-		},
-		{
-			"type": "embed",
-			"descriptor": {
 				"repository": "https://github.com/v2Blueprints/ruby-rbenv"
 			},
 			"user": "^^user^^"
-		}
-	],
-	"containers": [
+		},
 		{
-			"type": "lxd"
-		}
-	]
+      "type": "embed",
+      "runtimes": [
+        "lxd"
+      ],
+      "target": {
+        "repository": "https://github.com/v2Blueprints/enginesd_debian_base"
+      }
+    }
+	],
+	"images": [
+    {
+      "runtimes": [
+        "docker"
+      ],
+      "target": {
+        "repository": "https://github.com/v2Blueprints/enginesd_debian_base"
+      }
+    }
+  ]
 }
