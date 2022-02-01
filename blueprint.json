@@ -5,11 +5,12 @@
 	},
 	"binding_target": {
 		"user": "www",
-		"port": "8889",
-		"servername": "ruby.^^domain_name^^",
-		"ServerAdmin": "ruby Admin",
 		"user_home": "/var/www/",
-		"code_destination": "/var/www/^^identifer^^"
+		"port": "8889",
+		"servername": "ruby.^^domain.fqdn^^",
+		"ServerAdmin": "ruby Admin",
+		"code_destination": "/var/www/^^identifier^^",
+		"ruby_version": 3.0
 	},
 	"system_packages": {
 		"adds": [
@@ -23,7 +24,9 @@
 			"target": {
 				"repository": "https://github.com/v2Blueprints/ruby-rbenv"
 			},
-			"user": "^^user^^"
+			"configuration": {
+				"ruby_version": "^^ruby_version^^"
+			}
 		},
 		{
       "type": "embed",
