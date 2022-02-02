@@ -4,13 +4,15 @@
 		"explanation": "nginx passenger example"
 	},
 	"binding_target": {
-		"user": "www",
-		"user_home": "/var/www/",
-		"port": "8889",
-		"servername": "ruby.^^domain.fqdn^^",
-		"ServerAdmin": "ruby Admin",
-		"code_destination": "/var/www/^^identifier^^",
-		"ruby_version": 3.0
+		"configuration": {
+			"user": "www",
+			"user_home": "/var/www/",
+			"port": "8889",
+			"servername": "ruby.^^domain.fqdn^^",
+			"ServerAdmin": "ruby Admin",
+			"code_destination": "/var/www/^^identifier^^",
+			"ruby_version": 3.0
+		}
 	},
 	"system_packages": {
 		"adds": [
@@ -25,7 +27,7 @@
 				"repository": "https://github.com/v2Blueprints/ruby-rbenv"
 			},
 			"configuration": {
-				"ruby_version": "^^ruby_version^^"
+				"version": "^^configuration.ruby_version^^"
 			}
 		},
 		{
