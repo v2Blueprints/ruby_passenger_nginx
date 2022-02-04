@@ -5,7 +5,7 @@ if test -f /tmp/packing/scripts/user/install_software
   /tmp/packing/scripts/user/install_software
  fi
 
-cd  ^^configuration.code_destination^^
+cd  ^^ruby_passenger_nginx.code_destination^^
 
 if test -f Gemfile
  then

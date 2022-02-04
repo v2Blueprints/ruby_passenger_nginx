@@ -27,7 +27,7 @@
 				"repository": "https://github.com/v2Blueprints/ruby-rbenv"
 			},
 			"configuration": {
-				"version": "^^configuration.ruby_version^^"
+				"version": "^^ruby_passenger_nginx.ruby_version^^"
 			}
 		},
 		{
