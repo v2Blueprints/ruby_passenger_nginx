@@ -1,0 +1,5 @@
+#!/bin/sh -e
+apt install -y dirmngr gnupg
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
+echo deb [arch=amd64] https://oss-binaries.phusionpassenger.com/apt/passenger focal main > /etc/apt/sources.list.d/passenger.list
+apt update
