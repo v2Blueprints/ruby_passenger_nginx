@@ -1,11 +1,11 @@
 #!/bin/sh
 
 if test -f /tmp/packing/scripts/user/install_software
-  then	 
+  then
   /tmp/packing/scripts/user/install_software
  fi
 
-cd  ^^code_destination^^
+cd  ^^ruby_passenger_nginx.code_destination^^
 
 if test -f Gemfile
  then
@@ -17,4 +17,3 @@ if test -f /tmp/packing/scripts/user/rakes
  then
     /tmp/packing/scripts/user/rakes
 fi
-

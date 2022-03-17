@@ -1,15 +1,20 @@
 {
-	"title": "Rails",
-	"description": "nginx passenger example",
-	"binding_anchor": {
-		"user": "www",
-		"port": "8889",
-		"servername": "ruby.^^domain_name^^",
-		"ServerAdmin": "ruby Admin",
-		"user_home": "/var/www/",
-		"code_destination": "/var/www/^^identifer^^"
+	"about": {
+		"title": "Rails",
+		"explanation": "nginx passenger example"
 	},
-	"os_packages": {
+	"binding_target": {
+		"configuration": {
+			"user": "www",
+			"user_home": "/var/www/",
+			"port": "8889",
+			"servername": "ruby.^^domain.fqdn^^",
+			"ServerAdmin": "ruby Admin",
+			"code_destination": "/var/www/^^identifier^^",
+			"ruby_version": 3.0
+		}
+	},
+	"system_packages": {
 		"adds": [
 			"nginx",
 			"libnginx-mod-http-passenger"
@@ -18,23 +23,31 @@
 	"bindings": [
 		{
 			"type": "embed",
-			"descriptor": {
-				"repository": "https://github.com/v2Blueprints/enginesd_debian_base"
-			},
-      "locale": "^^locale^^",
-      "charset": "^^charset^^"
-		},
-		{
-			"type": "embed",
-			"descriptor": {
+			"target": {
 				"repository": "https://github.com/v2Blueprints/ruby-rbenv"
 			},
-			"user": "^^user^^"
-		}
-	],
-	"containers": [
+			"configuration": {
+				"version": "^^ruby_passenger_nginx.ruby_version^^"
+			}
+		},
 		{
-			"type": "lxd"
-		}
-	]
+      "type": "embed",
+      "runtimes": [
+        "lxd"
+      ],
+      "target": {
+        "repository": "https://github.com/v2Blueprints/enginesd_debian_base"
+      }
+    }
+	],
+	"images": [
+    {
+      "runtimes": [
+        "docker"
+      ],
+      "target": {
+        "repository": "https://github.com/v2Blueprints/enginesd_debian_base"
+      }
+    }
+  ]
 }
