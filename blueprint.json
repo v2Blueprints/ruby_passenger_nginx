@@ -1,52 +1,34 @@
 {
-	"about": {
-		"title": "Rails",
-		"explanation": "nginx passenger example"
-	},
-	"binding_target": {
-		"configuration": {
-			"user": "www",
-			"user_home": "/var/www/",
-			"port": "8889",
-			"servername": "ruby.^^domain.fqdn^^",
-			"ServerAdmin": "ruby Admin",
-			"code_destination": "/var/www/^^identifier^^",
-			"ruby_version": 3.0
-		}
-	},
-	"system_packages": {
-		"adds": [
-			"nginx",
-			"libnginx-mod-http-passenger"
-		]
-	},
-	"bindings": [
-		{
-			"type": "embed",
-			"target": {
-				"repository": "https://github.com/v2Blueprints/ruby-rbenv"
-			},
-			"configuration": {
-				"version": "^^ruby_passenger_nginx.ruby_version^^"
-			}
-		},
-		{
-      "type": "embed",
-      "runtimes": [
-        "lxd"
-      ],
-      "target": {
-        "repository": "https://github.com/v2Blueprints/enginesd_debian_base"
-      }
+  "identifier": "ruby_passenger_nginx",
+  "about": {
+    "title": "Rails",
+    "explanation": "nginx passenger example"
+  },
+  "binding_target": {
+    "configuration": {
+      "user": "www",
+      "user_home": "/var/www/",
+      "port": "8889",
+      "servername": "ruby.^^domain.fqdn^^",
+      "ServerAdmin": "ruby Admin",
+      "code_destination": "/var/www/^^identifier^^",
+      "ruby_version": 3
     }
-	],
-	"images": [
+  },
+  "system_packages": {
+    "adds": [
+      "nginx",
+      "libnginx-mod-http-passenger"
+    ]
+  },
+  "bindings": [
     {
-      "runtimes": [
-        "docker"
-      ],
+      "type": "embed",
+      "configuration": {
+        "version": "^^ruby_passenger_nginx.ruby_version^^"
+      },
       "target": {
-        "repository": "https://github.com/v2Blueprints/enginesd_debian_base"
+        "repository": "https://github.com/v2Blueprints/ruby-rbenv"
       }
     }
   ]
